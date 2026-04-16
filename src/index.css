@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color:hotpink;
+  color: #fff;
+}
+#navlist{
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  
+  
+}
+#navlist li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+}
+.card{
+ 
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  
+}
+.card1{
+   padding: 10px;
+  margin: 20px;
+  background-color: #333;
+  border-radius: 20px;
+  
+}
+.card1 img{
+  border-radius: 50%;
+}
+
+.card2{
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.card2 .card2-content{
+  padding: 10px;
+  margin: 20px;
+  background-color: #333;
+  border-radius: 20px;
+}
+.card2 .card2-content img{
+  border-radius: 50%;
+  padding: 10px;
+ 
+}
+.projects{
+margin: 110px;
+}
+.projects h1{
+  
+   
+   color: red;
+
+  text-align: center;
+}
+.projects .projects-card{
+ display: flex;
+ flex-wrap: wrap;
+ /* background-color: #fff; */
+ gap: 20px;
+ text-align: center;
+ 
+}
+
+.projects .projects-card .card0{
+    gap: 10px;
+    background-color: aqua;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    
+    
+}
+
+.projects .projects-card .card0 img{
+  border-radius: 50%;
+}
+.projects .projects-card .card0 button{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
