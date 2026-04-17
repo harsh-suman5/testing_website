@@ -9,10 +9,12 @@ The goal of this project is to understand how to build and deploy a React applic
 
 ## 🚀 Tech Stack
 
-- React  
-- Vite  
-- JavaScript (ES6+)  
-- CSS  
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=react" height="40" alt="React"/>
+  <img src="https://skillicons.dev/icons?i=vite" height="40" alt="Vite"/>
+  <img src="https://skillicons.dev/icons?i=js" height="40" alt="JavaScript"/>
+  <img src="https://skillicons.dev/icons?i=css" height="40" alt="CSS"/>
+</p>  
 
 ---
 
