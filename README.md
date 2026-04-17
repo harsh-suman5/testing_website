@@ -1,12 +1,83 @@
-# React + Vite
+# 🌐 React + Vite Practice Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple project built while learning **React** and **Vite**.  
+The goal of this project is to understand how to build and deploy a React application.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://testingharshsuman.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React  
+- Vite  
+- JavaScript (ES6+)  
+- CSS  
+
+---
+
+## 🎯 Purpose
+
+This project was created for learning and testing:
+
+- Setting up a React project using Vite  
+- Understanding component structure  
+- Practicing basic UI design  
+- Learning how to deploy a react project  
+
+---
+
+## 🛠️ Getting Started
+
+To run this project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+
+# Navigate into the folder
+cd your-repo-name
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 📦 Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+---
+
+## 📁 Project Structure
+
+```
+public/
+src/
+  components/
+  assets/
+  App.jsx
+  main.jsx
+index.html
+package.json
+```
+
+---
+
+## 🌍 Deployment
+
+This project is deployed using **Netlify**.
+
+---
+
+## 📌 Note
+
+This is a practice project created for learning purposes. More features and improvements will be added over time.
