@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
     {/* //navbar component is added here so that it will be visible on all the pages */}
-    <Navbar /> 
-    
+    <Navbar />
+
      <Routes>
       <Route path='/' element={<Home />} /> 
       <Route path='/projects' element={<Projects />} /> 
