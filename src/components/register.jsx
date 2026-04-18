@@ -38,12 +38,12 @@ const Login = () => {
       <br /><br />
 
       <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
-        Login
+        Register
       </button>
 
       <p className="mt-4 text-center text-gray-600">
-        Don't have an account? 
-        <span className="text-blue-500 cursor-pointer ml-1"><a href="/Register">Register</a></span>
+        Already have an account.
+        <span className="text-blue-500 cursor-pointer ml-1"><a href="/login">Login</a></span>
       </p>
 
     </form>

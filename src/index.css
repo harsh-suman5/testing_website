@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .navbar{
@@ -82,6 +83,7 @@ margin: 110px;
   border-radius: 20px;
   padding: 10px;
 }
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
