@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ username: '', password: '' })
   const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -23,7 +25,7 @@ const Register = () => {
       const response = await axiosInstance.post('api/register/', formData)
       setMessage(response.data.message || 'Registered successfully! ✅')
       setIsError(false)
-      // TODO: redirect to login → navigate('/login')
+      navigate('/home')  
     } catch (error) {
       const errMsg = error.response?.data?.message || 'Registration failed. Please try again.'
       setMessage(errMsg)

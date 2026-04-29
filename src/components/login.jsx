@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ username: '', password: '' })
   const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -24,7 +26,7 @@ const Login = () => {
       setMessage(response.data.message || 'Login successful! ✅')
       setIsError(false)
       // TODO: save token → localStorage.setItem('token', response.data.token)
-      // TODO: redirect → navigate('/')
+      navigate('/home')
     } catch (error) {
       const errMsg = error.response?.data?.message || 'Login failed. Please try again.'
       setMessage(errMsg)
