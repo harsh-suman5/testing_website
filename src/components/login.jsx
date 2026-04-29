@@ -1,4 +1,10 @@
 import React from 'react'
+import axios from 'axios'
+
+
+axios.get("https://backend-testing-website-i5bw.onrender.com/").then(
+  (response) => {console.log(response.data); }
+).catch(error => {console.error("kuch gadbad hai mere hero😂😂",error);});
 
 const Login = () => {
   return (
