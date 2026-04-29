@@ -3,6 +3,7 @@ import Navbar from './components/navbar'
 import Home from './components/home'
 import Projects from './components/projects'
 import Login from './components/login'
+import Footer from './components/footer'
 
 
 import Register from './components/register'
@@ -22,6 +23,8 @@ const App = () => {
       <Route path = '/register' element={<Register />} />
 
      </Routes>
+
+     <Footer />
 
     
 
