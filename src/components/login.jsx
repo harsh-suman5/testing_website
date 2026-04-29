@@ -23,6 +23,9 @@ const Login = () => {
 
     try {
       const response = await axiosInstance.post('api/login/', formData)
+      localStorage.setItem('username', response.data.username || formData.username);
+      localStorage.setItem('isLoggedIn', true);
+
       setMessage(response.data.message || 'Login successful! ✅')
       setIsError(false)
       // TODO: save token → localStorage.setItem('token', response.data.token)
