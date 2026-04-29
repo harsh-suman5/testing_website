@@ -84,7 +84,7 @@ const Home = () => {
 
         <h1 className="text-5xl font-black leading-tight mb-5 max-w-2xl">
           Learn. Build.{' '}
-          <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
             Grow.
           </span>
         </h1>
@@ -94,7 +94,7 @@ const Home = () => {
         </p>
 
         <div className="flex gap-4 flex-wrap justify-center mb-20">
-          <a href="/projects" className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition text-base">
+          <a href="/projects" className="bg-linear-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition text-base">
             View Projects
           </a>
           <a href="/register" className="border border-gray-600 text-white font-semibold px-8 py-3.5 rounded-xl hover:border-pink-500 hover:text-pink-400 transition text-base">
@@ -104,17 +104,17 @@ const Home = () => {
 
         <div className="flex gap-12 flex-wrap justify-center items-center">
           <div className="flex flex-col items-center gap-1">
-            <span className="text-3xl font-extrabold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">500+</span>
+            <span className="text-3xl font-extrabold bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">500+</span>
             <span className="text-gray-500 text-xs uppercase tracking-widest">Students</span>
           </div>
           <div className="w-px h-10 bg-gray-800" />
           <div className="flex flex-col items-center gap-1">
-            <span className="text-3xl font-extrabold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">20+</span>
+            <span className="text-3xl font-extrabold bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">20+</span>
             <span className="text-gray-500 text-xs uppercase tracking-widest">Courses</span>
           </div>
           <div className="w-px h-10 bg-gray-800" />
           <div className="flex flex-col items-center gap-1">
-            <span className="text-3xl font-extrabold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">100%</span>
+            <span className="text-3xl font-extrabold bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">100%</span>
             <span className="text-gray-500 text-xs uppercase tracking-widest">Free Content</span>
           </div>
         </div>
@@ -133,7 +133,7 @@ const Home = () => {
 
       <h2 className="text-4xl font-black mt-5 mb-3">
         Courses &{" "}
-        <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
           Programs
         </span>
       </h2>
@@ -193,10 +193,12 @@ const Home = () => {
             <div className="flex gap-3 mt-auto">
               <button className="flex-1 border border-gray-600 text-white text-sm font-semibold py-2.5 rounded-xl
                                  hover:border-pink-500 hover:text-pink-400 transition">
-                View Details
+                <a href="/courses/webdevelopment" className="block w-full text-center">
+                  View Details
+                </a>
               </button>
 
-              <button className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-bold py-2.5 rounded-xl
+              <button className="flex-1 bg-linear-to-r from-pink-500 to-red-500 text-white text-sm font-bold py-2.5 rounded-xl
                                  hover:opacity-90 transition">
                 Enroll Now
               </button>

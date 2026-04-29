@@ -4,6 +4,7 @@ import Home from './components/home'
 import Projects from './components/projects'
 import Login from './components/login'
 import Footer from './components/footer'
+import Webdevelopment from './components/courses/webdevelopment'
 
 
 import Register from './components/register'
@@ -21,6 +22,7 @@ const App = () => {
       <Route path='/projects' element={<Projects />} /> 
       <Route path='/login' element={<Login />} />
       <Route path = '/register' element={<Register />} />
+      <Route path = '/courses/webdevelopment' element={<Webdevelopment />} />
 
      </Routes>
 
