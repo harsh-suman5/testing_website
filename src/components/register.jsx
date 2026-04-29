@@ -23,6 +23,8 @@ const Register = () => {
 
     try {
       const response = await axiosInstance.post('api/register/', formData)
+      localStorage.setItem('username', response.data.username || formData.username);
+      localStorage.setItem('isLoggedIn', true); 
       setMessage(response.data.message || 'Registered successfully! ✅')
       setIsError(false)
       navigate('/home')  
