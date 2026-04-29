@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Single shared axios instance — all components import this
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   headers: {
     'Content-Type': 'application/json',
   },
