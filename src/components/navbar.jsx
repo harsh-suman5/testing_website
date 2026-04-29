@@ -13,7 +13,7 @@ const Navbar = () => {
     localStorage.removeItem('isLoggedIn')
     localStorage.removeItem('username')
     setIsLoggedIn(false)
-    navigate('/')
+    window.location.href = '/'
   }
 
   return (
