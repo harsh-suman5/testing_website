@@ -34,7 +34,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleLogout}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#f472b6', fontSize: '1rem', fontWeight: '600' }}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', fontSize: '1rem', fontWeight: '600' }}
                 >
                   Logout
                 </button>
