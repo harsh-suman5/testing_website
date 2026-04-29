@@ -1,52 +1,176 @@
 import React from 'react'
 
-const projects = () => {
-  return (
-    <div className="projects">
-      <h1>Our Projects</h1>
+const projectsList = [
+  {
+    id: 1,
+    title: 'E-Commerce Website',
+    desc: 'React aur Node.js se banaya gaya ek full-stack e-commerce platform with payment gateway.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    live: '#',
+    github: '#',
+  },
+  {
+    id: 2,
+    title: 'Portfolio Website',
+    desc: 'Modern aur responsive personal portfolio Tailwind CSS aur React se banaya gaya.',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop',
+    tags: ['React', 'Tailwind CSS'],
+    live: '#',
+    github: '#',
+  },
+  {
+    id: 3,
+    title: 'Task Manager App',
+    desc: 'Drag & drop task management app with real-time updates aur user authentication.',
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop',
+    tags: ['React', 'Firebase', 'Tailwind'],
+    live: '#',
+    github: '#',
+  },
+  {
+    id: 4,
+    title: 'Weather Dashboard',
+    desc: 'OpenWeather API se live weather data fetch karta hai aur beautiful charts show karta hai.',
+    image: 'https://images.unsplash.com/photo-1504608524841-42584120d693?w=500&h=300&fit=crop',
+    tags: ['JavaScript', 'API', 'Chart.js'],
+    live: '#',
+    github: '#',
+  },
+  {
+    id: 5,
+    title: 'Chat Application',
+    desc: 'Real-time chat app with Socket.io, private rooms aur message history support.',
+    image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=500&h=300&fit=crop',
+    tags: ['Node.js', 'Socket.io', 'React'],
+    live: '#',
+    github: '#',
+  },
+  {
+    id: 6,
+    title: 'Blog Platform',
+    desc: 'Full-featured blogging platform with markdown support, comments aur admin dashboard.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=300&fit=crop',
+    tags: ['Next.js', 'MongoDB', 'Tailwind'],
+    live: '#',
+    github: '#',
+  },
+]
 
-      <div className="projects-card">
-        <div className="card0">
-          <img src="data:image/jpeg;base64,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"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing  elit. <br /> Dolorem ipsam possimus veritatis?</p>
-          <button>view project</button>
-        </div>
-        <div className="card0">
-          <img src="data:image/jpeg;base64,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"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />Eos blanditiis incidunt aliquam.</p>
-         <button>view project</button>
-        </div>
-        <div className="card0">
-          <img src="data:image/jpeg;base64,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"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Qui aperiam modi pariatur!</p>
-         <button>view project</button>
-        </div>
-        <div className="card0">
-          <img src="data:image/jpeg;base64,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"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Qui aperiam modi pariatur!</p>
-         <button>view project</button>
-        </div>
-        <div className="card0">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAnwMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQcBBAYIAgP/xAA3EAABBAIABAMGBQMDBQAAAAABAAIDBAURBhIhMQcTQRQiUWFxgTKRobHBFTPCI3LRFhdCQ2L/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEAQX/xAAlEQEAAgICAgEDBQAAAAAAAAAAAQIDERIhBDEiE1GBBUFhcYL/2gAMAwEAAhEDEQA/ALxREQEREBERAREQE2oPjPMzYHh+1frRMlnjb7jHnQJVMzeK+XyMtR3nRVXQv5x5TSA461pw31C5M6Sisy9BbRVX/wB07VaOF9vHQOY8aL2SEAn9dKZxHidi7stdluCSoLB0yUuDmb+BPp6eijF6ylOO0O7RYB2sqasREQEREBERAREQEREBERAUPxLxDR4dpNs5B0gD3ckbI27c92t6AUwuR8UMdBf4RtPmaC+s5k0TtdWkOAJ/IlCFM8V8Zz8RvcJJ7T6bJSY4pC3oPQnQHVc/CcfLKDYh6b127k9hoL5gx7bFyy/T2MrgPfy/+Wz0H3UvicLYNuOwyWnA8HYa8+c5v23raz3tpsx45lGycO5yxaf/AEyjYkrb93poH6AlfVjD8SYuBklnFW2VwSX/AOmXN6j11tXxjNNp7h5d8nuu9FA1OJ83j5PLyjMdfiB081ZPLkaP9ruh+mwqIzTPuF9sWvTX8OvFB10spZt0bWMjDWysjPu60BzHsrbY4PaHNO2uGwQe68zX46+O40yPsnOa9lvmRRxDo4PGx+q9FcP0n43B0aU0hkkggaxzz6kDqtdJ2xZqRVIoiKxSIiICIiAiIgIiICIiAtLL+xOxtlmTMYqSMLJfM7Fp6aW6ub49pzXOH5GwN5zG9sjmj1AUbTMRuE8dYteImVNYDFeVeuh4LYDckjY//wCWhnK74g8rt/dSHl3pM9dpOxFZuLYwuhnjaAWgepd3JKlq8QZi4hMXCUyl7nN7tdoAEa7dAFtaY+q6Oe5ZnLm9IuVjA76lrQfyKx2y6l6dcHXtr41+RfiaxfO/2axKIyQwD3Tv17jegN/NfhgPbbfE17E28OyCnHzGO7GOV0YAPKQfXZ107deyncKZ7UXsk9B/kOPI475QB8ft6a+S2rLPZ7Yq/wBVuAa6AMjPT4c3Lv8AlVRfW9p3pMzxiXJwYGS74i0S+Ex0WNMkryAGjlLTy/d2/wAzpXWFwlui21HX9kaA1p8t7D1D2eoPxOyu0x8ToaUETiSWMDev0Wrx78umHyqa1bbZREWlkEREBERAREQEREBERAWCNrKIIPN8O1b9V7a8UcM5PMHNaBzH56XBXqs9N4rX4TG4duYdD9D6qzMzcOPxdq21heYYnPDfiQF5vzPF3E1+asMhk5ZWeeHSRRgNj1sa1odtLPmx1n+23xr5NT+8LKxthjPdeRyD4uPX9VKxSy5SVtbHxCTl6Ofr3Y/qe38qtM1LMzB2rFaaUPDNt07t8V2nhBk8qWx08lZdJXlgDoY3tHMxw79fhr4rLSkWn5NuWZpWbUj0sbH4yvUjj0xrpWjrIR1K3tLAI2vpejFYiNQ8abTadyIiLrgiIgIiICIiAiIgIiICwsr5KCvPFPiKeo+thqkhj9oY587h3LOoA++iqoxNN0vEMUA5TA6QDlcNjWtkKT47zP8AUOMZ7DDuNkpij/2tBH/JWtwaS/OwPLCeaRxHy7hZ723X8vRw4+F/8rOz2CpU+GLTq0ETJSwDn5Pw7Otrl8C52LzFsOmeZgA6OT1aO2h8tjsu54xEg4SuFvfy9qr8veEWSbOHENnrPLTrfYg/yodReCN3w2394XlgMi3KYyG23W3DTgPRw7qRVceEOX9oqS0nu97lEjf2P8Kx1fitypEsvk4vpZZqIiKxQIiICIiAiIgIiICIiAtHN2DVw96w3o6OB7h9Q0reXG+Kz54+EJn1+bQlZ5gDtAt36/Lely06jaeOvK8Q8+5eZ7LMbiSXF/X7ruvD+m2TORjXuxM/VcFYc2zka7C3lIOy3e+3zVl+G4DLc8p0eoG1kjvUPXy6jnb8LQytZtvCW6+vxwuA/JUPxM4s4dhsf+yL/TJ+vun+F6BryB0YHTRHVUdxHT82tmaOv7U7yAPTrzBMvU1lT4nyi9PvDe8JbL4sjWkLtB7+Q/QjSvULzTwplTVEDIWFzi4EO313v0A6kr0nCSYmFwIcQNg9wp+PM9wj+ox3S38P0REWl5oiIgIiICIiAiIgIiICieKacF/h+/Wtc3lPiO+U9enUfqpZfhchbZqywP8AwyNLSuT3DtZ1aJec87gYcaDNX8yWYuAEm/7QHV2wPiPj2WzwvxJDhXSC5VsS8+jzw8v7EhWHluF7MWKys95sBihoTNibGOsjnA+8ftv81V81TloyPGxod1npSY7l6GXPFomsLAi8VMTAwhuOybyPQMjH+a4yfKw5zJ5O7Wjngjmk5jBJovPTr+H5b7L74i4YZg+HeF7g5xPdhd7YXOJ5pCA4fTQ2OnwUvwbj68OVxc/l8xfYDXfRzXN/ldyU5RpV4+b6dpsluEuEMSy/C+GzYaPMEorlzSA3e2jetq2AuZw3DlujcZ7RdE1eH+1094j038F0+lLBSaxPJHyssZLRqWQiIrmUREQEREBERAREQEREBYWUQRvETQcFkGn1rv8A2VGW4y/HPY0dXO5Qr1z9SW9h7dSu5rZZoy1pd22qYx2MktZhmHjY8XWynfN+Bhb3O969FXefS3FE9y7Pxdxw/wCi6bgNmjYiI6enKWf5LneBXh9qjs/hnYR+asPj3FT5rhe1UrOYJdtk986B5TvX6KufD2hNkbzWQMEba5a+VzmnoN9AEt7gpE6mV0LKwsqxUIiICIiAiIgIiICIiAiIgLBWVgoILPZyKoDWryB1g9CWkHy/r81xkl5uNylC3E5vmvnbzukbtxDjykb6Enr3Xc3eG8XckMr64inJJMsJ5HE/bv8AdatPg7G17bbUzp7cjCHR+0ODgwj1AAHVUXpktPTZhyYaVncTtnjzJyYnhW/bgcGyhoY0kb0XEDf6rhOCs5HFR5RK6GUAcvI0crvr8furUu0q96s+tcgjngf+KOQbB+y5iTw54eMpkgisVt92wTEN+wO1K9bT3CGHJjrWa3T+JycORhDmO1IPxMP7j5KQUfjMPSxjWirCGkDXO4lzvzKkFZXeu1FuO/j6ERF1EREQEREBERAREQEREBERAREQEREBERAREQEREBERB//Z"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Qui aperiam modi pariatur!</p>
-         <button>view project</button>
-        </div>
-        <div className="card0">
-          <img src="data:image/jpeg;base64,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"  />
-          <h2>Project 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Qui aperiam modi pariatur!</p>
-         <button>view project</button>
-        </div>
-       
+const tagColors = [
+  'bg-pink-500/10 text-pink-400',
+  'bg-blue-500/10 text-blue-400',
+  'bg-green-500/10 text-green-400',
+  'bg-yellow-500/10 text-yellow-400',
+  'bg-purple-500/10 text-purple-400',
+]
+
+const Projects = () => {
+  return (
+    <div className="bg-black text-white min-h-screen">
+
+      {/* ── HERO BANNER ── */}
+      <div className="py-20 px-6 text-center bg-gray-950 border-b border-gray-800">
+        <span className="border border-pink-500 text-pink-500 text-sm font-medium px-5 py-1.5 rounded-full">
+          Our Work
+        </span>
+        <h1 className="text-5xl font-black mt-5 mb-4">
+          Our{' '}
+          <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+            Projects
+          </span>
+        </h1>
+        <p className="text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
+          Yahan wo projects hain jo humne banaye — real-world problems ke real solutions.
+        </p>
       </div>
-       
+
+      {/* ── PROJECTS GRID ── */}
+      <div className="py-20 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsList.map((project, idx) => (
+            <div
+              key={project.id}
+              className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col
+                         transition-all duration-300 hover:-translate-y-2 hover:border-pink-500
+                         hover:shadow-xl hover:shadow-pink-500/20"
+            >
+              {/* Image */}
+              <div className="overflow-hidden relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+              </div>
+
+              {/* Body */}
+              <div className="p-6 flex flex-col flex-1">
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={tag}
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tagColors[i % tagColors.length]}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Title */}
+                <h2 className="text-lg font-bold mb-2">{project.title}</h2>
+
+                {/* Description */}
+                <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-6">
+                  {project.desc}
+                </p>
+
+                {/* Buttons */}
+                <div className="flex gap-3 mt-auto">
+                  <a
+                    href={project.live}
+                    className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-bold
+                               py-2.5 rounded-xl text-center hover:opacity-90 transition"
+                  >
+                    🚀 Live Demo
+                  </a>
+                  <a
+                    href={project.github}
+                    className="flex-1 border border-gray-600 text-white text-sm font-semibold
+                               py-2.5 rounded-xl text-center hover:border-pink-500 hover:text-pink-400 transition"
+                  >
+                    ⭐ GitHub
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── CTA ── */}
+      <div className="pb-24 px-6">
+        <div className="max-w-2xl mx-auto text-center bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
+          <h3 className="text-2xl font-black mb-3">Kuch Banana Hai? Seekhein Hamare Saath!</h3>
+          <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
+            Apna pehla project banane ke liye humari courses join karein — bilkul free.
+          </p>
+          <a
+            href="/register"
+            className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
+          >
+            Start Building → Free
+          </a>
+        </div>
+      </div>
+
     </div>
   )
 }
 
-export default projects
+export default Projects
