@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './navbar.css'
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Read login state from localStorage
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -16,16 +18,31 @@ const Navbar = () => {
     window.location.href = '/'
   }
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <>
-    <div className="navbar text-4xl font-bold bg-black ">
-        <div>
-          <h1 className='text-4xl font-bold bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent'>
+    <div className="navbar">
+        <div className="navbar-container">
+          <h1 className='navbar-title'>
             Harsh Academy Live
           </h1>
-        </div>
-        <div>
-          <ul id='navlist'>
+          
+          {/* Hamburger Menu Icon */}
+          <button className="hamburger" onClick={toggleMenu}>
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          </button>
+
+          {/* Desktop Navigation */}
+          <ul className='navlist'>
             <li><a href="/">Home</a></li>
             <li><a href="/projects">Projects</a></li>
 
@@ -34,7 +51,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleLogout}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', fontSize: '1rem', fontWeight: '600' }}
+                  className='logout-btn'
                 >
                   Logout
                 </button>
@@ -42,7 +59,31 @@ const Navbar = () => {
             ) : (
               <li><a href="/login">Login</a></li>
             )}
+          </ul>
+        </div>
 
+        {/* Mobile Navigation Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <ul>
+            <li><a href="/" onClick={closeMenu}>Home</a></li>
+            <li><a href="/projects" onClick={closeMenu}>Projects</a></li>
+
+            {/* Show Logout if logged in, else show Login */}
+            {isLoggedIn ? (
+              <li>
+                <button
+                  onClick={() => {
+                    handleLogout()
+                    closeMenu()
+                  }}
+                  className='logout-btn-mobile'
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <li><a href="/login" onClick={closeMenu}>Login</a></li>
+            )}
           </ul>
         </div>
     </div>
