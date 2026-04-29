@@ -20,7 +20,7 @@ const Login = () => {
     setIsError(false)
 
     try {
-      const response = await axiosInstance.post('/api/login', formData)
+      const response = await axiosInstance.post('api/login/', formData)
       setMessage(response.data.message || 'Login successful! ✅')
       setIsError(false)
       // TODO: save token → localStorage.setItem('token', response.data.token)
