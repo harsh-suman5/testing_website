@@ -20,7 +20,7 @@ const Register = () => {
     setIsError(false)
 
     try {
-      const response = await axiosInstance.post('/api/register/', formData)
+      const response = await axiosInstance.post('api/register/', formData)
       setMessage(response.data.message || 'Registered successfully! ✅')
       setIsError(false)
       // TODO: redirect to login → navigate('/login')
