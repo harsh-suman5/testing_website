@@ -8,6 +8,8 @@ import Webdevelopment from './components/courses/webdevelopment'
 
 
 import Register from './components/register'
+import Dash_home from './components/dashboard/dash_home'
+import Dash_navbar from './components/dashboard/dash_navbar'
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -30,7 +32,7 @@ const App = () => {
 
      <Footer />
 
-    
+      
 
     
        
