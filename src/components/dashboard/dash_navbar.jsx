@@ -43,7 +43,7 @@ const Dash_navbar = () => {
 
           {/* Desktop Navigation */}
           <ul className='navlist'>
-            <li><a href="/">Home</a></li>
+            <li><a href="/dash_home">Home</a></li>
             <li><a href="/projects">Projects</a></li>
             <li><a href="/dash_home">Dashboard</a></li>
 
