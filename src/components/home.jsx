@@ -9,6 +9,7 @@ const courses = [
     level: 'Beginner',
     tag: 'Most Popular',
     image: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=220&fit=crop',
+    link: '/courses/webdevelopment',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const courses = [
     level: 'Intermediate',
     tag: 'Trending',
     image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=220&fit=crop',
+    link: '/courses/react-nextjs',
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const courses = [
     level: 'Intermediate',
     tag: 'New',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=220&fit=crop',
+    link: '/courses/nodejs-backend',
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const courses = [
     level: 'Advanced',
     tag: 'Hot',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=220&fit=crop',
+    link: '/courses/machine-learning',
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ const courses = [
     level: 'Beginner',
     tag: 'Creative',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=220&fit=crop',
+    link: '/courses/uiux-design',
   },
   {
     id: 6,
@@ -54,6 +59,7 @@ const courses = [
     level: 'Intermediate',
     tag: 'New',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=220&fit=crop',
+    link: '/courses/react-native',
   },
 ]
 
@@ -193,7 +199,7 @@ const Home = () => {
             <div className="flex gap-3 mt-auto">
               <button className="flex-1 border border-gray-600 text-white text-sm font-semibold py-2.5 rounded-xl
                                  hover:border-pink-500 hover:text-pink-400 transition">
-                <a href="/courses/webdevelopment" className="block w-full text-center">
+                <a href={course.link} className="block w-full text-center">
                   View Details
                 </a>
               </button>
@@ -224,7 +230,7 @@ const Home = () => {
             </span>
             <h2 className="text-4xl font-black mt-5 mb-3">
               News &{' '}
-              <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
                 Updates
               </span>
             </h2>
