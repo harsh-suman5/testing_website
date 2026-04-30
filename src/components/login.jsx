@@ -28,8 +28,8 @@ const Login = () => {
 
       setMessage(response.data.message || 'Login successful! ✅')
       setIsError(false)
-      // TODO: save token → localStorage.setItem('token', response.data.token)
-      navigate('/')
+      // TODO: save   token → localStorage.setItem('token', response.data.token)
+      navigate('/dash_home')
     } catch (error) {
       const errMsg = error.response?.data?.message || 'Login failed. Please try again.'
       setMessage(errMsg)

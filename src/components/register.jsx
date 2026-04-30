@@ -27,7 +27,7 @@ const Register = () => {
       localStorage.setItem('isLoggedIn', true); 
       setMessage(response.data.message || 'Registered successfully! ✅')
       setIsError(false)
-      navigate('/home')  
+      navigate('/dash_home')  
     } catch (error) {
       const errMsg = error.response?.data?.message || 'Registration failed. Please try again.'
       setMessage(errMsg)

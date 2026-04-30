@@ -76,7 +76,7 @@ const Projects = () => {
         </span>
         <h1 className="text-5xl font-black mt-5 mb-4">
           Our{' '}
-          <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
             Projects
           </span>
         </h1>
@@ -102,8 +102,8 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+                {/* linear overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900/60 to-transparent" />
               </div>
 
               {/* Body */}
@@ -133,7 +133,7 @@ const Projects = () => {
                 <div className="flex gap-3 mt-auto">
                   <a
                     href={project.live}
-                    className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-bold
+                    className="flex-1 bg-linear-to-r from-pink-500 to-red-500 text-white text-sm font-bold
                                py-2.5 rounded-xl text-center hover:opacity-90 transition"
                   >
                     🚀 Live Demo
@@ -155,14 +155,14 @@ const Projects = () => {
 
       {/* ── CTA ── */}
       <div className="pb-24 px-6">
-        <div className="max-w-2xl mx-auto text-center bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
+        <div className="max-w-2xl mx-auto text-center bg-linear-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
           <h3 className="text-2xl font-black mb-3">Kuch Banana Hai? Seekhein Hamare Saath!</h3>
           <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
             Apna pehla project banane ke liye humari courses join karein — bilkul free.
           </p>
           <a
             href="/register"
-            className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
+            className="bg-linear-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
           >
             Start Building → Free
           </a>
