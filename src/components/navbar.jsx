@@ -45,7 +45,7 @@ const Navbar = () => {
           <ul className='navlist'>
             <li><a href="/">Home</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/dash_home">Dashboard</a></li>
+            
 
             {/* Show Logout if logged in, else show Login */}
             {isLoggedIn ? (

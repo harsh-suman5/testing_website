@@ -1,8 +1,12 @@
 import React from 'react'
+import Dash_navbar from './dash_navbar'
 
 const Dash_home = () => {
   return (
-    <div>Dash_home</div>
+    <>
+    <Dash_navbar />
+    
+    </>
   )
 }
 
