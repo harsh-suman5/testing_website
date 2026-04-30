@@ -11,16 +11,19 @@ import Register from './components/register'
 import Dash_home from './components/dashboard/dash_home'
 import Dash_navbar from './components/dashboard/dash_navbar'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 const App = () => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
+
   return (
     <>
-      {/* //navbar component is added here so that it will be visible on all the pages */}
-      <Navbar />
+      {/* Navbar only shows on non-dashboard pages */}
+      {!isLoggedIn && <Navbar />}
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        {/* Agar logged in hai to / pe jaane par /dash_home pe redirect karo */}
+        <Route path='/' element={isLoggedIn ? <Navigate to='/dash_home' replace /> : <Home />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
