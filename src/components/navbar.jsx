@@ -39,7 +39,6 @@ const Navbar = () => {
             <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
             <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
             <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
           </button>
 
           {/* Desktop Navigation */}
