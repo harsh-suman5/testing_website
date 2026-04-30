@@ -11,15 +11,18 @@ import Register from './components/register'
 import Dash_home from './components/dashboard/dash_home'
 import Dash_navbar from './components/dashboard/dash_navbar'
 
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
 const App = () => {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
+  const location = useLocation()
+
+  // Dashboard routes ka apna Dash_navbar hai, isliye main Navbar mat dikhao
+  const isDashboard = location.pathname.startsWith('/dash')
 
   return (
     <>
-      {/* Navbar only shows on non-dashboard pages */}
-      {!isLoggedIn && <Navbar />}
+      {!isDashboard && <Navbar />}
 
       <Routes>
         {/* Agar logged in hai to / pe jaane par /dash_home pe redirect karo */}
