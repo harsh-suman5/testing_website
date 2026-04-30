@@ -1,5 +1,7 @@
 import React from 'react'
 
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
+
 const projectsList = [
   {
     id: 1,
@@ -153,21 +155,23 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* ── CTA ── */}
-      <div className="pb-24 px-6">
-        <div className="max-w-2xl mx-auto text-center bg-linear-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
-          <h3 className="text-2xl font-black mb-3">Kuch Banana Hai? Seekhein Hamare Saath!</h3>
-          <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
-            Apna pehla project banane ke liye humari courses join karein — bilkul free.
-          </p>
-          <a
-            href="/register"
-            className="bg-linear-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
-          >
-            Start Building → Free
-          </a>
+      {/* ── CTA — only for guests ── */}
+      {!isLoggedIn && (
+        <div className="pb-24 px-6">
+          <div className="max-w-2xl mx-auto text-center bg-linear-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
+            <h3 className="text-2xl font-black mb-3">Kuch Banana Hai? Seekhein Hamare Saath!</h3>
+            <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
+              Apna pehla project banane ke liye humari courses join karein — bilkul free.
+            </p>
+            <a
+              href="/register"
+              className="bg-linear-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
+            >
+              Start Building → Free
+            </a>
+          </div>
         </div>
-      </div>
+      )}
 
     </div>
   )
