@@ -4,7 +4,7 @@ import Dash_navbar from './dash_navbar'
 const Dash_home = () => {
   return (
     <>
-      <Dash_navbar />
+      {/* <Dash_navbar /> */}
 
     </>
   )
