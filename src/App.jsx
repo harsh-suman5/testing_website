@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import Home from './components/home'
-import Dash_home from './components/dashboard/dash_home'  
 import Projects from './components/projects'
 import Login from './components/login'
 import Footer from './components/footer'
@@ -17,31 +16,31 @@ import { Routes, Route } from 'react-router-dom'
 const App = () => {
   return (
     <>
-    {/* //navbar component is added here so that it will be visible on all the pages */}
-    <Navbar />
+      {/* //navbar component is added here so that it will be visible on all the pages */}
+      <Navbar />
 
-     <Routes>
-      <Route path='/' element={<Home />} /> 
-      <Route path='/projects' element={<Projects />} /> 
-      <Route path='/login' element={<Login />} />
-      <Route path = '/dash_home' element={<Dash_home />} />   
-      <Route path = '/register' element={<Register />} />
-      <Route path = '/dash_navbar' element={<Dash_navbar />} />
-      <Route path = '/courses/webdevelopment' element={<Webdevelopment />} />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/login' element={<Login />} />
+       <Route path='/dash_home' element={<Dash_home />} />  
+        <Route path='/register' element={<Register />} />
+        <Route path='/dash_navbar' element={<Dash_navbar />} />
+        <Route path='/courses/webdevelopment' element={<Webdevelopment />} />
 
-     </Routes>
+      </Routes>
 
-     <Footer />
+      <Footer />
 
-      
 
-    
-       
 
-   
-   
+
+
+
+
+
     </>
-    )
+  )
 }
 
 export default App
