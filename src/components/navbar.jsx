@@ -28,12 +28,12 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="navbar">
+      <div className="navbar">
         <div className="navbar-container">
           <h1 className='navbar-title'>
             Harsh Academy Live
           </h1>
-          
+
           {/* Hamburger Menu Icon */}
           <button className="hamburger" onClick={toggleMenu}>
             <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <ul className='navlist'>
             <li><a href="/">Home</a></li>
             <li><a href="/projects">Projects</a></li>
-            
+
 
             {/* Show Logout if logged in, else show Login */}
             {isLoggedIn ? (
@@ -87,7 +87,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-    </div>
+      </div>
     </>
   )
 }

@@ -66,7 +66,7 @@ const Dash_navbar = () => {
         {/* Mobile Navigation Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="/" onClick={closeMenu}>Home</a></li>
+            <li><a href="/dash_home" onClick={closeMenu}>Home</a></li>
             <li><a href="/projects" onClick={closeMenu}>Projects</a></li>
 
             {/* Show Logout if logged in, else show Login */}
