@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import Home from './components/home'
+import Dash_home from './components/dashboard/dash_home'  
 import Projects from './components/projects'
 import Login from './components/login'
 import Footer from './components/footer'
