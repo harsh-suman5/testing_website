@@ -16,10 +16,9 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="footer-socials">
-            <a href="#" className="social-icon" title="GitHub">G</a>
-            <a href="#" className="social-icon" title="LinkedIn">in</a>
-            <a href="#" className="social-icon" title="YouTube">▶</a>
-            <a href="#" className="social-icon" title="Twitter">𝕏</a>
+            <a href="https://github.com/harsh-suman5" className="social-icon" title="GitHub">G</a>
+            <a href="https://www.linkedin.com/in/harsh-suman2003/" className="social-icon" title="LinkedIn">in</a>
+            <a href="https://www.youtube.com/@harshacademylive" className="social-icon" title="YouTube">▶</a>
           </div>
         </div>
 
