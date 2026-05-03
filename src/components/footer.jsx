@@ -3,6 +3,7 @@ import './footer.css'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const username = localStorage.getItem('username')
 
   return (
     <footer className="footer">
@@ -28,8 +29,12 @@ const Footer = () => {
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
+            {!username && (
+              <>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+              </>
+            )}
           </ul>
         </div>
 
