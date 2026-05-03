@@ -39,7 +39,7 @@ const Dash_home = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-10 bg-gray-900 m-6 rounded-2xl border border-gray-700 shadow-lg">
+        <div className="flex-1 p-10 bg-white-600 m-6 rounded-2xl border border-gray-700 shadow-lg">
           <h1 className="text-4xl font-black mb-2">
             Hello, <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
           </h1>
