@@ -39,9 +39,9 @@ const Dash_home = () => {
               </div>
 
               {/* Main Content */}
-              <div className="flex-1 p-10">
+              <div className="flex-1 p-10 bg-gray-900">
                 <h1 className="text-4xl font-black mb-2">
-                  Hello, <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
+                  Hello, <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
                 </h1>
                 <p className="text-gray-400 text-lg">Welcome back to your dashboard.</p>
               </div>
