@@ -60,7 +60,7 @@ const Dash_home = () => {
           </div>
 
           {/* Main Content Card */}
-          <div className="flex-1 p-6 md:p-10 bg-blue-600 m-4 md:m-6 rounded-2xl ">
+          <div className="flex-1 p-6 md:p-10 bg-blue-600">
           <h1 className="text-4xl font-black mb-2">
             Hello, <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
           </h1>
