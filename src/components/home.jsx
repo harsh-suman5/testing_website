@@ -311,7 +311,7 @@ const Home = () => {
             </span>
             <h2 className="text-4xl font-black mt-5 mb-3">
               What Our{' '}
-              <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
                 Students Say
               </span>
             </h2>
@@ -323,7 +323,7 @@ const Home = () => {
           {/* Overall Rating Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mb-16 bg-gray-900 border border-gray-800 rounded-2xl py-10 px-8">
             <div className="text-center">
-              <p className="text-6xl font-black bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">4.9</p>
+              <p className="text-6xl font-black bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">4.9</p>
               <div className="flex justify-center gap-1 my-2 text-yellow-400 text-xl">★★★★★</div>
               <p className="text-gray-400 text-sm">Overall Rating</p>
             </div>
@@ -354,7 +354,7 @@ const Home = () => {
                 "Harsh Academy Live ne meri zindagi badal di. React course itna clear tha ki mujhe job mil gayi sirf 2 mahine mein!"
               </p>
               <div className="flex items-center gap-3 mt-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-linear-to-br from-pink-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
                   RK
                 </div>
                 <div>
@@ -371,7 +371,7 @@ const Home = () => {
                 "Bilkul beginner thi main. Node.js course ke baad mujhe ek startup mein backend developer ki internship mili. Thank you!"
               </p>
               <div className="flex items-center gap-3 mt-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
                   PS
                 </div>
                 <div>
@@ -388,7 +388,7 @@ const Home = () => {
                 "Best free resource available online. ML course bahut detailed hai aur live sessions se doubts bhi clear ho jaate hain."
               </p>
               <div className="flex items-center gap-3 mt-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-linear-to-br from-red-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm">
                   AV
                 </div>
                 <div>
@@ -401,14 +401,14 @@ const Home = () => {
           </div>
 
           {/* CTA Strip */}
-          <div className="mt-16 text-center bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
+          <div className="mt-16 text-center bg-linear-to-r from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-2xl py-12 px-6">
             <h3 className="text-2xl font-black mb-3">Aap Bhi Join Karein — Bilkul Free!</h3>
             <p className="text-gray-400 text-base mb-7 max-w-sm mx-auto">
               500+ students ki community ka hissa banein aur apna career build karein.
             </p>
             <a
               href="/register"
-              className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
+              className="bg-linear-to-r from-pink-500 to-red-500 text-white font-bold px-8 py-3.5 rounded-xl hover:opacity-90 transition inline-block"
             >
               Register Now — It's Free 🚀
             </a>
