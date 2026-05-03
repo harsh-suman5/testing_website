@@ -10,7 +10,7 @@ const Dash_home = () => {
       <div className="flex min-h-[calc(100vh-70px)] bg-black text-white relative">
         {/* Sidebar */}
         <div className={`
-          absolute z-40 md:static inset-y-0 left-0 w-64 bg-gray-950 border-r border-gray-800 p-6 flex flex-col
+          absolute z-40 md:static inset-y-0 left-0 w-64 bg-blue-900 border-r border-blue-800 p-6 flex flex-col
           transform transition-transform duration-300 ease-in-out
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0
         `}>
