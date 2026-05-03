@@ -38,7 +38,7 @@ const Dash_home = () => {
               </a>
             </li>
             <li>
-              <a href="/dash_home" className="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-gray-900 border border-transparent hover:border-gray-700 transition-all font-medium">
+              <a href="/profile" className="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-gray-900 border border-transparent hover:border-gray-700 transition-all font-medium">
                 Profile
               </a>
             </li>
