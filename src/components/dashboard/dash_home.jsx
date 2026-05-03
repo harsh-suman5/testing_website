@@ -60,12 +60,12 @@ const Dash_home = () => {
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
               </button>
             </div>
-            
+
             <h1 className="text-4xl font-black mb-2 pr-12">
-            Hello, <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
-          </h1>
-          <p className="text-gray-400 text-lg">Welcome back to your dashboard.</p>
-        </div>
+              Hello, <span className="bg-linear-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">{username}</span> 👋
+            </h1>
+            <p className="text-gray-400 text-lg">Welcome back to your dashboard.</p>
+          </div>
         </div>
       </div>
 
