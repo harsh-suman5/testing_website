@@ -40,7 +40,7 @@ const Login = () => {
   }
 
   return (
-    <div className="no-scroll flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+    <div className="no-scroll flex justify-center items-center min-h-screen bg-linear-to-r from-blue-500 to-purple-600">
 
       <form
         onSubmit={handleSubmit}
