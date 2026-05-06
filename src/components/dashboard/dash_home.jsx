@@ -53,7 +53,7 @@ const Dash_home = () => {
           </div>
 
           <div className="mb-8 hidden md:block">
-            <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider">Navigation</h2>
+            <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider">Harsh Academy Live</h2>
           </div>
 
           <ul className="flex flex-col gap-2 h-full">
