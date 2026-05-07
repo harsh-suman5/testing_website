@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dash_navbar from './dash_navbar';
+import axiosInstance from '../../api/axiosInstance';
 
 const Profile = () => {
   const username = localStorage.getItem('username') || 'Guest User';
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  const [userDetails, setUserDetails] = useState({
+    email: '',
+    role: '',
+    joinDate: '',
+    coursesCompleted: 0,
+    certificates: 0,
+    phone: '',
+    location: '',
+    bio: ''
+  });
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
@@ -11,14 +24,30 @@ const Profile = () => {
     window.location.href = '/';
   };
 
-  // Mock user details
-  const userDetails = {
-    email: `${username.toLowerCase().replace(/\s+/g, '')}@example.com`,
-    role: 'Student',
-    joinDate: 'January 2024',
-    coursesCompleted: 4,
-    certificates: 2
-  };
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Backend API call to fetch real user details
+        const response = await axiosInstance.get(`/api/user/`, {
+          params: { username }
+        });
+        
+        if (response.data) {
+          setUserDetails(prev => ({ ...prev, ...response.data }));
+        }
+      } catch (error) {
+        console.error("Error fetching user details:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (username && username !== 'Guest User') {
+      fetchUserData();
+    } else {
+      setIsLoading(false);
+    }
+  }, [username]);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-pink-500/30">
@@ -118,36 +147,42 @@ const Profile = () => {
               {/* Left Column: Avatar & Quick Info */}
               <div className="lg:col-span-1">
                 <div className="bg-[#111111]/60 backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center shadow-xl">
-                  <div className="relative mb-6">
-                    <div className="w-32 h-32 rounded-full bg-linear-to-tr from-pink-500 to-purple-600 p-1">
-                      <div className="w-full h-full rounded-full bg-[#111111] flex items-center justify-center overflow-hidden border-4 border-[#111111]">
-                        <span className="text-5xl font-bold bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                          {username.charAt(0).toUpperCase()}
-                        </span>
+                  {isLoading ? (
+                    <div className="text-pink-400 py-10 font-medium animate-pulse">Loading profile...</div>
+                  ) : (
+                    <>
+                      <div className="relative mb-6">
+                        <div className="w-32 h-32 rounded-full bg-linear-to-tr from-pink-500 to-purple-600 p-1">
+                          <div className="w-full h-full rounded-full bg-[#111111] flex items-center justify-center overflow-hidden border-4 border-[#111111]">
+                            <span className="text-5xl font-bold bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                              {username.charAt(0).toUpperCase()}
+                            </span>
+                          </div>
+                        </div>
+                        <button className="absolute bottom-0 right-0 p-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-colors shadow-lg shadow-pink-500/30 border border-white/20">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </button>
                       </div>
-                    </div>
-                    <button className="absolute bottom-0 right-0 p-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-colors shadow-lg shadow-pink-500/30 border border-white/20">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    </button>
-                  </div>
-                  
-                  <h2 className="text-2xl font-bold text-white mb-1">{username}</h2>
-                  <p className="text-pink-400 font-medium mb-4">{userDetails.role}</p>
-                  
-                  <div className="w-full border-t border-white/10 pt-4 mt-2">
-                    <div className="flex justify-between items-center py-2">
-                      <span className="text-gray-400 text-sm">Joined</span>
-                      <span className="text-gray-200 text-sm font-medium">{userDetails.joinDate}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="text-gray-400 text-sm">Courses</span>
-                      <span className="text-gray-200 text-sm font-medium">{userDetails.coursesCompleted}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="text-gray-400 text-sm">Certificates</span>
-                      <span className="text-gray-200 text-sm font-medium">{userDetails.certificates}</span>
-                    </div>
-                  </div>
+                      
+                      <h2 className="text-2xl font-bold text-white mb-1">{username}</h2>
+                      <p className="text-pink-400 font-medium mb-4">{userDetails.role || 'User'}</p>
+                      
+                      <div className="w-full border-t border-white/10 pt-4 mt-2">
+                        <div className="flex justify-between items-center py-2">
+                          <span className="text-gray-400 text-sm">Joined</span>
+                          <span className="text-gray-200 text-sm font-medium">{userDetails.joinDate || '-'}</span>
+                        </div>
+                        <div className="flex justify-between items-center py-2">
+                          <span className="text-gray-400 text-sm">Courses</span>
+                          <span className="text-gray-200 text-sm font-medium">{userDetails.coursesCompleted || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center py-2">
+                          <span className="text-gray-400 text-sm">Certificates</span>
+                          <span className="text-gray-200 text-sm font-medium">{userDetails.certificates || 0}</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
