@@ -10,6 +10,7 @@ import Webdevelopment from './components/courses/webdevelopment'
 import Register from './components/register'
 import Dash_home from './components/dashboard/dash_home'
 import Dash_navbar from './components/dashboard/dash_navbar'
+import Profile from './components/dashboard/profile'
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
@@ -18,7 +19,7 @@ const App = () => {
   const location = useLocation()
 
   // Dashboard routes ka apna Dash_navbar hai, isliye main Navbar mat dikhao
-  const isDashboard = location.pathname.startsWith('/dash')
+  const isDashboard = location.pathname.startsWith('/dash') || location.pathname === '/profile'
 
   return (
     <>
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/dash_home' element={<Dash_home />} />
         <Route path='/dash_navbar' element={<Dash_navbar />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='/courses/webdevelopment' element={<Webdevelopment />} />
       </Routes>
 
