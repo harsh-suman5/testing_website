@@ -29,7 +29,7 @@ const Dash_home = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-pink-500/30">
-      <Dash_navbar />
+     
       <div className="flex min-h-[calc(100vh-70px)] relative overflow-hidden">
         
         {/* Background glow effects */}
